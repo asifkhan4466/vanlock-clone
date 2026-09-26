@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import { SiteHeader } from "../components/SiteChrome";
 import { services } from "../site-data";
@@ -12,12 +9,10 @@ const reviews = [
 ];
 
 export default function AboutPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  return (
+return (
     <>
+    <SiteHeader />
     <main className="about-page">
-      <SiteHeader />
 
       <section className="about-banner">
         <div className="about-banner-image" />
