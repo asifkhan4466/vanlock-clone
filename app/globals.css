@@ -7,6 +7,11 @@
 @media(max-width:900px){.container{width:min(100% - 48px,720px)}.top-inner{gap:15px}.nav-links{gap:17px}.nav-links .button{padding:0 14px;gap:12px}.hero,.hero-content{min-height:590px}.hero-note{display:none}.section{padding:82px 0}.about-layout{gap:7%}.about-visual{height:440px}.about-stamp{width:135px;height:135px}.about-stamp b{font-size:13px}.van-photo{height:160px}.make-row{flex-wrap:wrap;justify-content:center}.fleet-layout{gap:6%}.fleet-visual{height:380px}.fleet-photo{height:315px}.fleet-outline{right:-12px}.contact-layout{gap:7%}.footer-main{gap:25px;grid-template-columns:1.2fr .8fr .9fr 1fr}}
 @media(max-width:680px){.container{width:calc(100% - 40px)}.top-inner{height:34px;justify-content:center}.top-inner>span,.top-inner>a:last-child{display:none}.site-header{height:68px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;padding:20px;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.nav-links.nav-open{display:flex}.nav-links>a:not(.button){padding:14px 0;border-bottom:1px solid var(--line)}.nav-links .button{margin-top:15px}.hero,.hero-content{min-height:640px}.hero-image{background-position:58% center;background-image:linear-gradient(90deg,rgba(12,35,28,.91),rgba(12,35,28,.65) 68%,rgba(12,35,28,.3)),url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1200&q=85")}.hero-content{align-items:flex-end}.hero-copy{padding:0 0 54px}.hero h1{font-size:clamp(60px,16vw,86px)}.hero-copy>p{font-size:12px;max-width:330px}.hero-actions{gap:17px;flex-wrap:wrap}.hero-proof{margin-top:37px}.hero-edge{top:auto;bottom:0;writing-mode:initial;padding:9px 11px;font-size:7px}.section{padding:68px 0}.section-heading{display:block;margin-bottom:32px}.section-heading h2,.why h2{font-size:45px}.heading-aside{width:auto;margin-top:18px;max-width:380px}.service-grid{grid-template-columns:1fr 1fr}.service-card{min-height:200px;padding:20px 13px 20px 0}.service-card:nth-child(3){border-left:0;padding-left:0;border-top:1px solid var(--line)}.service-card:nth-child(4){border-top:1px solid var(--line)}.service-card+.service-card{padding-left:13px}.service-card h3{font-size:15px;margin-top:22px}.service-card p{font-size:9px}.service-card .circle-arrow{bottom:15px}.services-bottom{gap:15px;align-items:flex-start;line-height:1.7}.services-bottom>a{text-align:right;min-width:145px}.about-layout{grid-template-columns:1fr;gap:36px}.about-visual{height:370px}.about-photo{width:88%}.image-caption{width:88%}.about-stamp{top:34px;width:125px;height:125px}.about-copy h2{font-size:54px}.about-stats{justify-content:space-between;gap:10px}.about-stats>div{gap:6px}.about-stats b{font-size:21px}.about-stats small{font-size:6px}.van-grid{grid-template-columns:1fr 1fr;gap:10px}.van-photo{height:145px}.van-info{padding:13px}.van-info h3{font-size:14px}.van-tag{font-size:6px;left:7px;top:8px;padding:6px}.make-row{justify-content:flex-start;gap:13px}.make-row span{width:100%}.make-row b{font-size:8px}.fleet-layout{grid-template-columns:1fr;gap:35px}.fleet-copy h2{font-size:60px}.fleet-visual{height:330px}.fleet-photo{width:90%;height:270px}.fleet-quote{width:230px;padding:16px}.fleet-quote p{font-size:12px}.fleet-outline{font-size:31px}.why-layout{grid-template-columns:1fr;gap:35px}.why-intro{position:static}.why-intro h2{font-size:48px}.review-grid{grid-template-columns:1fr;gap:10px}.review-card{min-height:185px}.testimonial-heading h2{font-size:39px}.review-footer{gap:15px;line-height:1.6}.review-footer>a{text-align:right}.contact-layout{grid-template-columns:1fr;gap:35px}.contact h2{font-size:62px}.contact-form{padding:25px 19px}.form-row{grid-template-columns:1fr;gap:0}.form-title{align-items:flex-start;gap:10px}.form-title p{text-align:right}.footer{padding-top:45px}.footer-main{grid-template-columns:1fr 1fr;gap:34px 20px;padding-bottom:38px}.footer-brand{grid-column:1/-1}.footer-cta{padding-left:0;border-left:0}.footer-cta h3{font-size:17px}.footer-bottom{padding:15px 0;display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:7px}.footer-bottom span:nth-child(2){text-align:right}.footer-bottom a{grid-column:1/-1}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+body:has(.model-page) .site-header{position:relative;height:112px;background:#fff;color:#26343c;border-bottom:1px solid #e7ecef}
+body:has(.model-page) .nav-links{color:#26343c}
+body:has(.model-page) .nav-links>a.nav-active:not(.button),body:has(.model-page) .nav-dropdown-label.nav-active{color:#2282c6}
+.model-variant-note{margin:-6px 0 20px;font-size:21px;line-height:1.35;color:#111}
+@media(max-width:1100px){body:has(.model-page) .site-header{height:96px}}
 
 /* Reference-matched blue hero and navigation */
 :root{--lime:#2588cd;--ink:#14232e;--ink-2:#263b49;--paper:#fff;--dark:#121b20}
@@ -16,7 +21,7 @@
 .nav-wrap{width:min(1560px,calc(100% - 100px))}
 .brand img{display:block;width:190px;height:auto;max-height:76px;object-fit:contain}
 .nav-links{gap:clamp(18px,2.1vw,42px);font-size:16px;font-weight:500}
-.nav-links>a:not(.button):first-child{color:#278bd2}
+.nav-links>a.nav-active:not(.button),.nav-dropdown-label.nav-active{color:#278bd2}
 .nav-links>a:not(.button):hover{color:#50a9e8}
 .nav-links .button,.button{background:#2588cd;color:#fff;border-radius:5px;min-height:54px;padding:0 29px;font-size:16px;gap:13px}
 .button:hover{background:#1679bd}
@@ -114,6 +119,38 @@
   .hero-actions .button,.hero-actions .hero-service-button{min-width:180px;min-height:46px;padding:0 23px;font-size:14px}
   .hero-van{width:min(50vw,770px);right:1.5%;bottom:11%}
 }
+.model-page{background:#fff;color:#111}
+.model-product-hero{padding:90px 0 62px;background:#fff}
+.model-product-inner{min-height:390px;display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+.model-product-copy h1{max-width:600px;margin:0 0 22px;font-size:clamp(34px,4vw,42px);line-height:1.22;letter-spacing:-.025em}
+.model-product-copy p{max-width:550px;margin:0 0 22px;color:#60666c;font-size:18px;line-height:1.7}
+.model-product-copy .button{background:#2588cd;color:#fff;font-size:15px;gap:9px}
+.model-product-copy .button span{font-size:18px}
+.model-product-inner>img{width:100%;height:340px;object-fit:contain}
+.model-fitting{padding:0 0 54px;text-align:center}
+.model-fitting>h2{margin:0 0 38px;font-size:32px;line-height:1.25}
+.fitting-panel{display:grid;grid-template-columns:1fr 1fr;padding:32px 20px;background:#eaf7fc;border-radius:10px}
+.fitting-group{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;padding:4px 20px 15px}
+.fitting-group+.fitting-group{border-left:1px solid #d3e5ed}
+.fitting-group h3{grid-column:1/-1;margin:0 0 24px;font-size:26px}
+.fitting-position{display:flex;min-height:145px;align-items:center;flex-direction:column;gap:12px}
+.fitting-position b{font-size:18px}
+.fitting-lock{height:47px;color:#303030;font-size:45px;line-height:1}
+.fitting-unavailable{height:47px;color:#303030;font-size:34px;line-height:1}
+.fitting-position small{color:#5d656b;font-size:14px;line-height:1.4}
+.model-lock-services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding-top:0;padding-bottom:78px}
+.model-lock-card{min-height:330px;padding:24px 26px 25px;display:flex;align-items:center;flex-direction:column;text-align:center;background:#fff;border-radius:10px;box-shadow:0 12px 35px rgba(0,0,0,.055)}
+.model-lock-illustration{width:138px;height:126px;display:grid;place-items:center;margin-bottom:8px;color:#182633}
+.model-lock-illustration svg{width:100px;height:100px;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.model-lock-illustration.hooklock svg{width:78px}
+.model-lock-illustration.slamlock{color:#857447}
+.model-lock-illustration.statement svg{width:122px;height:95px}
+.model-lock-card h2{margin:4px 0 10px;font-size:22px;line-height:1.3}
+.model-lock-card p{max-width:365px;margin:0;color:#3e4449;font-size:16px;line-height:1.65}
+.model-lock-card>a{margin-top:auto;padding-top:14px;color:#2588cd;font-size:16px}
+.model-lock-card>a span{margin-left:8px;font-size:20px}
+@media(max-width:900px){.model-product-inner{gap:24px}.fitting-group{padding-inline:10px}.model-lock-card{padding-inline:18px}}
+@media(max-width:680px){.model-product-hero{padding:46px 0 35px}.model-product-inner{grid-template-columns:1fr;gap:18px}.model-product-copy h1{font-size:32px}.model-product-copy p{font-size:16px}.model-product-inner>img{height:230px;grid-row:1}.model-fitting{padding-bottom:36px}.model-fitting>h2{font-size:25px;margin:0 0 23px}.fitting-panel{grid-template-columns:1fr;gap:20px;padding:22px 8px}.fitting-group{padding:0 4px 12px}.fitting-group+.fitting-group{border-left:0;border-top:1px solid #d3e5ed;padding-top:20px}.fitting-group h3{font-size:22px;margin-bottom:18px}.fitting-position{min-height:132px;gap:10px}.fitting-position b{font-size:16px}.fitting-position small{font-size:11px}.model-lock-services{grid-template-columns:1fr;gap:15px;padding-bottom:50px}.model-lock-card{min-height:300px}}
 @media(min-width:1101px){.estimate-banner{width:100%;height:470px;min-height:450px;background-image:linear-gradient(90deg,rgba(8,91,147,.67) 0%,rgba(7,35,53,.72) 58%,rgba(5,13,18,.83) 100%),url('/vanlock/van-fleet-background.png');background-size:cover;background-position:center center;background-repeat:no-repeat;display:flex;align-items:center}}
 
 /* Reference site typography and brand colors */
@@ -123,7 +160,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading)}
 p,li,input,textarea,button{font-family:var(--font-body)}
 .button,.about-quote,.about-read-more,.about-preview-button,.services-all-button,.van-all-button{background-color:#2282c6}
 .button:hover,.about-read-more:hover,.about-preview-button:hover,.services-all-button:hover{background-color:#176aa5}
-.nav-links>a:not(.button):first-child,.nav-links>a:not(.button):hover,.arrow-link:hover,.about-nav>a:hover,.about-nav .about-nav-active{color:#2282c6}
+.nav-links>a.nav-active:not(.button),.nav-dropdown-label.nav-active,.nav-links>a:not(.button):hover,.nav-dropdown-label:hover,.arrow-link:hover,.about-nav>a:hover,.about-nav .about-nav-active{color:#2282c6}
 .hero-copy>p a,.about-preview-copy>p a{color:#2282c6}
 .eyebrow,.services-title .eyebrow,.van-heading .eyebrow,.about-preview-copy .eyebrow,.about-kicker{color:#2282c6}
 .section-heading h2 em,.about-copy h2 em,.fleet-copy h2 em,.why h2 em,.contact h2 em{color:#2282c6}
@@ -289,7 +326,7 @@ p,li,input,textarea,button{font-family:var(--font-body)}
 .about-quote{display:flex;align-items:center;gap:18px;background:#2588cd;border-radius:6px;padding:20px 40px;font-weight:700}.about-quote span{font-size:25px;line-height:1}
 .about-menu-toggle{display:none}
 .about-banner{height:632px;position:relative;display:grid;place-items:center;overflow:hidden;background:#153b55;color:#fff}
-.about-banner-image{position:absolute;inset:0;background-image:linear-gradient(180deg,rgba(9,23,34,.75) 0%,rgba(24,127,190,.82) 100%),url('/vanlock/hook-lock.jpg');background-position:center 48%;background-size:cover}
+.about-banner-image{position:absolute;inset:0;background-image:linear-gradient(180deg,rgba(9,23,34,.75) 0%,rgba(24,127,190,.82) 100%),url('/vanlock/blog-deadlock.webp');background-position:center 48%;background-size:cover}
 .about-banner h1{position:relative;margin:150px 0 0;font-size:clamp(48px,3.2vw,70px);line-height:1.1;letter-spacing:-.035em;font-weight:700}
 .about-story{padding:160px 0 130px;background:#fff}
 .about-story-inner{width:min(2070px,calc(100% - 100px));margin:auto;display:grid;grid-template-columns:.95fr 1.05fr;gap:95px;align-items:center}
@@ -392,10 +429,212 @@ p,li,input,textarea,button{font-family:var(--font-body)}
 @media(max-width:1100px){.about-team-section .difference-layout{width:calc(100% - 56px);grid-template-columns:1fr .9fr;gap:30px}.about-team-section .difference-layout>img{height:auto;max-height:440px}}
 @media(max-width:680px){.about-page .testimonial .container{width:calc(100% - 36px)}.about-team-section .difference-layout{width:calc(100% - 36px);grid-template-columns:1fr;gap:27px}.about-team-section .difference-copy h2{font-size:32px}.about-team-section .difference-copy h3{font-size:16px}.about-team-section .difference-copy p:not(.about-kicker){font-size:14px}.about-team-section .difference-layout>img{height:300px;max-height:none;aspect-ratio:auto}}
 
+/* Shared footer across the entire site. */
+.shared-reference-footer{position:relative;background:#303030;color:#fff;padding:0}
+.shared-reference-footer .footer-main{width:calc(100% - 48px);max-width:2070px;min-height:0;margin:auto;padding:90px 0 100px;display:grid;grid-template-columns:1.45fr .68fr 1.05fr .97fr;gap:60px;align-items:start}
+.shared-reference-footer .footer-logo{width:350px;max-width:100%;margin:0 0 32px}
+.shared-reference-footer .footer-brand>p{max-width:520px;margin:0 0 28px;font-size:26px;line-height:1.6;color:#f5f5f5}
+.shared-reference-footer .footer-column{gap:24px}
+.shared-reference-footer .footer-column h3{font-size:36px;font-weight:500;margin:0 0 12px;line-height:1.3}
+.shared-reference-footer .footer-main>div.footer-column>a{display:flex;align-items:flex-start;gap:14px;margin:0;font-size:26px;line-height:1.5;color:#f5f5f5}
+.shared-reference-footer .footer-main>div.footer-column>a:hover{color:#2588cd}
+.shared-reference-footer .footer-column:not(.footer-contact)>a:before{font-size:30px;line-height:1.2;flex:none}
+.shared-reference-footer .footer-contact{gap:40px}
+.shared-reference-footer .footer-contact svg{width:32px;height:32px;flex:none;margin-top:5px}
+.shared-reference-footer .footer-address{display:flex;gap:14px;font-size:26px;line-height:1.6}
+.shared-reference-footer .footer-contact span{overflow-wrap:anywhere;min-width:0}
+.shared-reference-footer .footer-socials{gap:16px}
+.shared-reference-footer .footer-socials a{width:48px;height:48px;font-size:28px}
+.shared-reference-footer .footer-socials a:last-child{font-size:22px}
+.shared-reference-footer .footer-socials svg{width:24px;height:24px}
+.shared-reference-footer .footer-bottom{border-top:0;min-height:80px;height:auto;padding:24px 70px;background:#2588cd;font-size:14px;color:#fff}
+.footer-to-top{position:absolute;right:2.4%;bottom:100px;display:grid;place-items:center;width:48px;height:48px;background:#2588cd;border:0;border-radius:6px;color:#fff;cursor:pointer}
+.footer-to-top svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:3}
+@media(max-width:1600px){.shared-reference-footer .footer-main{gap:32px;padding:60px 0 80px}.shared-reference-footer .footer-logo{width:260px}.shared-reference-footer .footer-brand>p,.shared-reference-footer .footer-main>div.footer-column>a,.shared-reference-footer .footer-address{font-size:16px}.shared-reference-footer .footer-column h3{font-size:24px}.shared-reference-footer .footer-column{gap:18px}.shared-reference-footer .footer-contact{gap:28px}.shared-reference-footer .footer-socials a{width:36px;height:36px}}
+@media(max-width:1100px){.shared-reference-footer .footer-main{width:calc(100% - 48px);grid-template-columns:1fr 1fr;gap:40px}.shared-reference-footer .footer-brand,.shared-reference-footer .footer-contact{grid-column:auto}}
+@media(max-width:600px){.shared-reference-footer .footer-main{grid-template-columns:1fr;width:calc(100% - 40px);padding:45px 0 90px;gap:36px}.shared-reference-footer .footer-column h3{font-size:23px}.shared-reference-footer .footer-logo{width:240px}.shared-reference-footer .footer-bottom{padding:18px 20px;font-size:12px;text-align:center}.footer-to-top{right:20px;bottom:85px}}
+
+/* Van Dead Locks detail page. */
+.deadlocks-section{padding:150px 0;background:#fff}
+.deadlocks-grid{width:calc(100% - 48px);max-width:2070px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center}
+.deadlocks-page h2{color:#080808}
+.deadlocks-grid h2{font-size:54px;font-weight:700;line-height:1.3;margin:0 0 35px;letter-spacing:-.015em}
+.deadlocks-grid p,.deadlocks-grid li{font-size:28px;line-height:1.8;color:#626a70;margin:0}
+.deadlocks-grid>img{width:100%;height:790px;object-fit:cover;border-radius:30px}
+.deadlocks-features{background:#e8f7fd}
+.deadlocks-features .deadlocks-grid>img{height:880px}
+.deadlocks-features ul{list-style:disc;padding-left:25px;margin:30px 0 0;display:grid;gap:14px}
+.deadlocks-features li::marker{color:#2588cd}
+.deadlocks-call{padding:110px 0;background:linear-gradient(90deg,#167fc3c9,#101c27d9),url('/vanlock/van-fleet-background.png') center/cover;color:#fff}
+.deadlocks-call-inner{width:calc(100% - 48px);max-width:2070px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:40px}
+.deadlocks-call h2{color:#fff;font-size:58px;font-weight:700;line-height:1.25;margin:0 0 22px}
+.deadlocks-call p{font-size:28px;line-height:1.8;margin:0}
+.deadlocks-call a{padding:24px 42px;border-radius:5px;background:#2588cd;color:#fff;white-space:nowrap;font-size:28px;font-weight:700}
+.deadlocks-comparison{max-width:2070px;width:calc(100% - 48px);margin:0 auto}
+.deadlocks-table-scroll{overflow-x:auto}
+.deadlocks-comparison table{width:100%;min-width:1000px;border-collapse:collapse;color:#454c50;font-size:24px;text-align:left}
+.deadlocks-comparison th,.deadlocks-comparison td{padding:28px 24px;line-height:1.5}
+.deadlocks-comparison thead{background:#2588cd;color:#fff;font-size:21px}
+.deadlocks-comparison thead th:first-child{font-size:30px;min-width:620px}
+.deadlocks-comparison tbody th{font-weight:400}
+.deadlocks-comparison tbody tr{background:#f2f2f2}.deadlocks-comparison tbody tr:nth-child(even){background:#e7e7e7}
+.deadlocks-comparison td{font-size:32px;font-weight:600}
+.deadlocks-faq{padding:160px 0 400px;background:#fff}
+.deadlocks-faq .deadlocks-grid{align-items:start}
+.deadlocks-faq details{margin-bottom:24px}
+.deadlocks-faq summary{display:flex;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;background:#e8f7fd;color:#101820;padding:26px 45px;font-size:26px;font-weight:700}
+.deadlocks-faq summary::-webkit-details-marker{display:none}
+.deadlocks-faq details[open] summary span{transform:rotate(180deg)}
+.deadlocks-faq details p{padding:40px 45px;font-size:26px;line-height:1.6}
+@media(max-width:2200px){.deadlocks-section{padding:100px 0}.deadlocks-grid{gap:64px}.deadlocks-grid h2{font-size:40px;margin-bottom:28px}.deadlocks-grid p,.deadlocks-grid li{font-size:20px}.deadlocks-grid>img{height:600px}.deadlocks-features .deadlocks-grid>img{height:660px}.deadlocks-call{padding:75px 0}.deadlocks-call h2{font-size:42px}.deadlocks-call p,.deadlocks-call a{font-size:20px}.deadlocks-comparison table{font-size:17px}.deadlocks-comparison thead{font-size:15px}.deadlocks-comparison thead th:first-child{font-size:22px;min-width:400px}.deadlocks-comparison th,.deadlocks-comparison td{padding:20px 16px}.deadlocks-comparison td{font-size:24px}.deadlocks-faq{padding:100px 0 220px}.deadlocks-faq summary,.deadlocks-faq details p{font-size:18px;padding:24px}}
+@media(max-width:1400px){.deadlocks-section{padding:75px 0}.deadlocks-grid{gap:45px}.deadlocks-grid h2{font-size:32px}.deadlocks-grid p,.deadlocks-grid li{font-size:16px}.deadlocks-grid>img{height:480px}.deadlocks-features .deadlocks-grid>img{height:530px}.deadlocks-call h2{font-size:34px}.deadlocks-call p,.deadlocks-call a{font-size:16px}.deadlocks-call a{padding:18px 26px}.deadlocks-faq{padding-bottom:150px}.deadlocks-faq summary,.deadlocks-faq details p{font-size:16px}}
+@media(max-width:700px){.deadlocks-grid{grid-template-columns:1fr;gap:30px;width:calc(100% - 36px)}.deadlocks-grid>img,.deadlocks-features .deadlocks-grid>img{height:360px;border-radius:18px}.deadlocks-section{padding:50px 0}.deadlocks-call-inner{flex-direction:column;align-items:flex-start;width:calc(100% - 36px)}.deadlocks-call h2{font-size:30px}.deadlocks-call br{display:none}.deadlocks-faq{padding:60px 0 90px}.deadlocks-comparison{width:calc(100% - 36px)}}
+
+/* Services overview and its navigation link. */
+.inner-services-control{display:flex;align-items:center;gap:0;padding:15px 0}
+.inner-services-control>a{color:inherit}.inner-services-control>a.nav-active{color:#2588cd}
+.inner-services-control>button{display:flex;align-items:center;justify-content:center;min-width:32px;min-height:30px;padding:0;border:0;background:none;color:inherit;cursor:pointer}
+@media(max-width:1100px){.inner-services-control{justify-content:space-between;border-bottom:1px solid #ffffff26}}
+.services-index-page .reference-banner{min-height:640px;background-image:linear-gradient(180deg,rgba(9,23,34,.75),rgba(24,127,190,.82)),url('/vanlock/blog-deadlock.webp')!important}
+.services-catalog{padding:150px 0 0;background:#fff}
+.services-catalog-grid{width:calc(100% - 48px);max-width:2070px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}
+.services-catalog-card{padding:50px 45px;text-align:center;border-radius:18px;background:white;box-shadow:0 0 70px #0000000a;color:#080808;display:flex;flex-direction:column;align-items:center}
+.services-catalog-card>img{width:170px;height:170px;object-fit:contain;margin-bottom:30px}
+.services-catalog-card h2{font-size:36px;line-height:1.25;margin:0 0 20px;font-weight:600;letter-spacing:-.02em}
+.services-catalog-card p{font-size:26px;line-height:1.6;margin:0 0 28px}
+.services-catalog-card>a{margin-top:auto;color:#2588cd;font-size:26px;font-weight:600;display:flex;gap:14px;align-items:center}
+.services-catalog-card>a span{font-size:32px;font-weight:400}
+.services-index-page .testimonial{padding:150px 0;background:#fff}
+.services-index-page .testimonial .container,.services-index-page .estimate-banner-inner{max-width:2070px;width:calc(100% - 48px);margin:auto}
+.services-index-page .testimonial-heading h2{font-size:54px;letter-spacing:-.02em}
+.services-index-page .review-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}
+.services-index-page .review-card{background:#e8f7fd;min-height:490px;padding:48px;border-radius:14px}
+.services-index-page .review-person{border:0;padding:0}
+.services-index-page .estimate-banner{height:470px;min-height:470px;max-height:none}
+@media(max-width:1600px){.services-index-page .reference-banner{min-height:460px}.services-catalog{padding-top:85px}.services-catalog-grid{gap:24px}.services-catalog-card{padding:35px 28px}.services-catalog-card>img{width:120px;height:120px;margin-bottom:24px}.services-catalog-card h2{font-size:25px}.services-catalog-card p,.services-catalog-card>a{font-size:18px}.services-index-page .testimonial{padding:85px 0}.services-index-page .testimonial-heading h2{font-size:38px}.services-index-page .review-grid{gap:24px}.services-index-page .review-card{padding:30px;min-height:360px}.services-index-page .review-card blockquote{font-size:18px}.services-index-page .review-person{gap:16px}.services-index-page .review-person .avatar{width:65px;height:65px}.services-index-page .review-person b{font-size:18px}.services-index-page .review-person small{font-size:14px}.services-index-page .estimate-banner{min-height:300px;height:auto}}
+@media(max-width:900px){.services-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.services-index-page .review-grid{grid-template-columns:1fr}.services-index-page .review-card{min-height:0}}
+@media(max-width:600px){.services-index-page .reference-banner{min-height:350px}.services-catalog{padding-top:50px}.services-catalog-grid{grid-template-columns:1fr;width:calc(100% - 36px)}.services-index-page .testimonial{padding:60px 0}.services-index-page .testimonial-heading h2{font-size:30px}.services-index-page .testimonial .container,.services-index-page .estimate-banner-inner{width:calc(100% - 36px)}}
+
+/* Fleets reference layout, scoped to this page. */
+.fleets-page .reference-banner{min-height:640px;background-image:linear-gradient(180deg,rgba(9,23,34,.75),rgba(24,127,190,.82)),url('/vanlock/blog-deadlock.webp')!important}
+.fleets-story{padding:150px 0;background:#fff}
+.fleets-content{width:calc(100% - 48px);max-width:2070px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;color:#111}
+.fleets-content h2{font-size:54px;line-height:1.25;margin:0 0 24px;font-weight:700;letter-spacing:-.02em}
+.fleets-content p{font-size:28px;line-height:1.55;color:#626a70;margin:0 0 36px}
+.fleets-content p:last-child{margin-bottom:0}
+.fleets-content .fleets-kicker{font-size:20px;font-weight:700;letter-spacing:.15em;color:#2588cd;margin:0 0 26px}
+.fleets-content>img{width:100%;height:800px;object-fit:cover;border-radius:12px}
+.fleets-benefits-section{background:#e8f7fd}
+.fleets-benefits-section .fleets-content>img{height:960px}
+.fleets-benefit-list{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:24px}
+.fleets-benefit-list li{display:flex;gap:25px;align-items:center}
+.fleets-benefit-list svg{width:52px;height:60px;fill:none;stroke:#2588cd;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.fleets-benefit-list h3{font-size:26px;margin:0 0 4px;color:#14232e}
+.fleets-benefit-list p{font-size:24px;margin:0}
+.fleets-page .testimonial{background:white;padding:150px 0}
+.fleets-page .testimonial .container,.fleets-page .estimate-banner-inner{width:calc(100% - 48px);max-width:2070px;margin:auto}
+.fleets-page .testimonial-heading h2{font-size:54px;letter-spacing:-.02em}
+.fleets-page .review-grid{gap:36px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.fleets-page .review-card{background:#e8f7fd;min-height:490px;padding:48px;border-radius:14px}
+.fleets-page .review-person{border:0;padding:0;gap:24px}
+.fleets-page .review-person .avatar{width:100px;height:100px}
+.fleets-page .estimate-banner{height:470px;min-height:470px;max-height:none}
+@media(max-width:2200px){.fleets-story,.fleets-page .testimonial{padding:100px 0}.fleets-content h2,.fleets-page .testimonial-heading h2{font-size:40px}.fleets-content p{font-size:20px;margin-bottom:26px}.fleets-content .fleets-kicker{font-size:15px;margin-bottom:20px}.fleets-content>img{height:600px}.fleets-benefits-section .fleets-content>img{height:720px}.fleets-benefit-list h3{font-size:20px}.fleets-benefit-list p{font-size:18px;margin:0}.fleets-benefit-list svg{width:38px;height:44px}}
+@media(max-width:1400px){.fleets-page .reference-banner{min-height:460px}.fleets-content{gap:36px}.fleets-story,.fleets-page .testimonial{padding:70px 0}.fleets-content h2,.fleets-page .testimonial-heading h2{font-size:32px}.fleets-content p{font-size:16px}.fleets-content .fleets-kicker{font-size:12px}.fleets-content>img{height:440px}.fleets-benefits-section .fleets-content>img{height:540px}.fleets-benefit-list h3{font-size:17px}.fleets-benefit-list p{font-size:15px}.fleets-benefit-list{gap:18px}.fleets-page .review-card{padding:28px;min-height:350px}.fleets-page .review-card blockquote{font-size:16px}.fleets-page .review-person .avatar{width:60px;height:60px}.fleets-page .review-person b{font-size:16px}.fleets-page .review-person small{font-size:13px}.fleets-page .estimate-banner{height:auto;min-height:280px}}
+@media(max-width:700px){.fleets-page .reference-banner{min-height:350px}.fleets-content{grid-template-columns:1fr;width:calc(100% - 36px);gap:30px}.fleets-story,.fleets-page .testimonial{padding:50px 0}.fleets-content>img,.fleets-benefits-section .fleets-content>img{height:350px}.fleets-page .review-grid{grid-template-columns:1fr;gap:18px}.fleets-page .review-card{min-height:0}.fleets-page .testimonial .container,.fleets-page .estimate-banner-inner{width:calc(100% - 36px)}}
+
+/* Contact page details and message form. */
+.contact-page-section{padding:90px 0 100px;background:#fff;color:#080808}
+.contact-page-map{position:relative;width:100%;height:clamp(360px,32vw,700px);background:#e8f7fd}
+.contact-page-map iframe{display:block;width:100%;height:100%;border:0}
+.contact-map-link{position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;color:#2588cd;border-radius:3px;box-shadow:0 2px 6px #0003;font-size:16px;font-weight:600}
+.contact-map-link:focus-visible{outline:2px solid #176aa5;outline-offset:3px}
+.contact-page-grid{width:91%;max-width:2320px;margin:auto;display:grid;grid-template-columns:1.08fr 1fr;gap:6%;align-items:center}
+.contact-page-kicker{margin:0 0 24px;color:#2588cd;font-size:16px;font-weight:700;letter-spacing:.15em}
+.contact-page-copy h2{margin:0 0 28px;font-size:clamp(32px,2.5vw,60px);line-height:1.2;font-weight:700;letter-spacing:-.02em}
+.contact-page-intro{margin:0 0 26px;font-size:clamp(17px,1.3vw,30px);line-height:1.6;color:#454545}
+.contact-page-detail{display:flex;align-items:center;gap:20px;margin-top:24px}
+.contact-page-icon{display:grid;place-items:center;flex:none;width:60px;height:60px;background:#2588cd;color:#fff;border-radius:5px}
+.contact-page-icon svg{width:34px;height:34px}
+.contact-page-detail h3{margin:0 0 3px;font-size:clamp(21px,1.5vw,34px);font-weight:600;line-height:1.3}
+.contact-page-detail p,.contact-page-detail a{margin:0;color:#454545;font-size:clamp(16px,1.2vw,28px);line-height:1.5;overflow-wrap:anywhere}
+.contact-page-form{padding:clamp(32px,4.2vw,100px);background:#e8f7fd;border-radius:22px;min-width:0}
+.contact-page-form h2{margin:0 0 26px;font-size:clamp(24px,1.6vw,38px);line-height:1.3;font-weight:700}
+.contact-page-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.contact-page-fields input,.contact-page-fields textarea{width:100%;min-width:0;border:0;border-radius:6px;padding:20px 24px;background:#fff;color:#252525;font:inherit;font-size:clamp(17px,1.3vw,30px);box-shadow:0 2px 3px #00000005}
+.contact-page-fields input{height:clamp(60px,4.2vw,100px)}
+.contact-page-fields input::placeholder,.contact-page-fields textarea::placeholder{color:#999;opacity:1}
+.contact-page-name,.contact-page-fields textarea,.contact-page-fields button{grid-column:1/-1}
+.contact-page-fields textarea{height:clamp(145px,8.2vw,200px);resize:vertical}
+.contact-page-fields button{min-height:clamp(60px,4.2vw,100px);border:0;border-radius:6px;background:#2588cd;color:#fff;font-size:clamp(18px,1.3vw,30px);cursor:pointer}
+.contact-page-fields button:hover{background:#176aa5}
+.contact-page-fields :focus-visible{outline:2px solid #176aa5;outline-offset:3px}
+@media(max-width:900px){.contact-page-section{padding:60px 0}.contact-page-grid{grid-template-columns:1fr;gap:40px;max-width:700px}.contact-page-form{padding:32px}}
+@media(max-width:480px){.contact-page-fields{grid-template-columns:1fr;gap:15px}.contact-page-form{padding:24px}.contact-page-detail{gap:14px}.contact-page-icon{width:50px;height:50px}.contact-page-fields input,.contact-page-fields textarea{padding:16px}}
+
+/* Inner-page navigation; homepage rules remain unchanged. */
+.site-header.compact-header{position:absolute;inset:0 0 auto;height:120px;background:rgba(7,20,30,.64);color:#fff;border-bottom:1px solid rgba(255,255,255,.18)}
+.site-header.compact-header .nav-wrap{position:relative;width:calc(100% - 40px);max-width:none;gap:32px}
+.site-header.compact-header .brand img{width:180px;max-height:78px}
+.compact-toggle{margin-left:auto;display:flex;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;padding:8px;background:none;border:0;color:#fff;cursor:pointer}
+.compact-toggle span{display:block;width:28px;height:2px;background:currentColor}
+.compact-header .compact-quote{min-height:52px;padding:0 32px;gap:18px;background:#2588cd;color:#fff;font-size:18px;border-radius:5px;white-space:nowrap}
+.compact-header .compact-navigation{position:absolute;top:100%;right:0;width:min(420px,100%);max-height:calc(100dvh - 120px);overflow-y:auto;padding:16px 24px;background:#17262e;box-shadow:0 12px 28px #0003;font-size:17px}
+.compact-navigation:not(.compact-navigation-open),.compact-submenu[hidden]{display:none}
+.compact-navigation>div>a,.compact-navigation>div>button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:15px 0;border:0;border-bottom:1px solid #ffffff26;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.compact-navigation>div>.nav-active,.compact-navigation a:hover,.compact-navigation button:hover{color:#2588cd}
+.compact-submenu{padding:8px 0 12px 16px}
+.compact-submenu>a{display:block;padding:10px 0;font-size:15px}
+.compact-submenu.inner-services-panel{padding:0;background:#fff;color:#111;border-radius:14px;box-shadow:0 20px 55px #0001;overflow-y:auto}
+.inner-services-panel>a{padding:clamp(18px,1.4vw,34px) clamp(22px,1.7vw,42px);border-bottom:1px solid #e2e2e2;font-size:clamp(16px,1.2vw,28px);line-height:1.45}
+.inner-services-panel>a:last-child{border-bottom:0}
+.inner-services-panel>a[aria-current=page],.inner-services-panel>a:hover{color:#2588cd}
+@media(min-width:1101px){.compact-submenu.inner-services-panel{width:clamp(290px,20.6vw,520px);max-height:calc(100dvh - 150px)}}
+@media(max-width:1100px){.compact-submenu.inner-services-panel{margin-top:12px}.inner-services-panel>a{padding:16px 20px;font-size:15px}}
+.compact-submenu.inner-van-panel{padding:24px;background:#fff;color:#303030;border-radius:16px;white-space:normal;box-shadow:0 20px 55px #0001}
+.inner-van-panel:not([hidden]){display:grid;grid-template-columns:1.05fr 2fr;gap:clamp(30px,3.2vw,80px)}
+.inner-van-panel h2{margin:0 0 32px;color:#080808;font-size:clamp(20px,1.5vw,36px);font-weight:700;line-height:1.3}
+.inner-popular{background:#e8f7fd;border-radius:16px;padding:28px 24px}
+.inner-popular>div{display:grid;gap:20px}
+.inner-manufacturers{padding:14px 0}
+.inner-make-grid{display:grid;grid-auto-flow:column;grid-template-rows:repeat(6,auto);grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 24px}
+.inner-van-panel a{display:flex;align-items:center;gap:12px;font-size:clamp(15px,1.2vw,28px);line-height:1.45}
+.inner-round-arrow{display:grid;place-items:center;flex:none;width:clamp(19px,1.2vw,28px);height:clamp(19px,1.2vw,28px);border-radius:50%;background:#2588cd;color:#fff;font-size:24px;line-height:1}
+.inner-make-grid .inner-all-makes{grid-column:3;grid-row:5 / span 2;align-self:start;justify-content:center;padding:14px 16px;background:#2588cd;color:#fff;border-radius:4px;white-space:nowrap}
+@media(min-width:1101px){
+  .compact-navigation>.inner-van-item{position:static}
+  .compact-submenu.inner-van-panel{top:calc(50% + 28px);left:50%;transform:translateX(-50%);width:min(80vw,2000px);max-height:calc(100dvh - 150px);padding:clamp(24px,1.6vw,40px)}
+}
+@media(max-width:1100px){
+  .inner-van-panel:not([hidden]){grid-template-columns:1fr;gap:20px}
+  .compact-submenu.inner-van-panel{padding:16px;margin-top:12px}
+  .inner-popular{padding:18px}
+  .inner-van-panel h2{margin-bottom:20px;font-size:19px}
+  .inner-make-grid{grid-auto-flow:row;grid-template-rows:none;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}
+  .inner-make-grid .inner-all-makes{grid-column:1 / -1;grid-row:auto;white-space:normal}
+  .inner-van-panel a{font-size:14px;gap:8px}
+}
+.inner-chevron{width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:0 3px 5px 14px}
+.compact-navigation button[aria-expanded=true] .inner-chevron{transform:rotate(225deg);margin-bottom:-5px}
+@media(min-width:1101px){
+  .site-header.compact-header{height:clamp(120px,8.3vw,210px);background:rgba(7,20,30,.45)}
+  .site-header.compact-header .nav-wrap{display:grid;grid-template-columns:1fr auto 1fr;width:calc(100% - 40px);max-width:2070px;margin-inline:auto;gap:clamp(24px,3vw,60px)}
+  .site-header.compact-header .brand img{width:clamp(180px,12vw,300px);max-height:none}
+  .compact-header .compact-toggle{display:none}
+  .compact-header .compact-quote{grid-column:3;grid-row:1;justify-self:end;min-height:clamp(52px,3.6vw,90px);width:clamp(180px,13.5vw,340px);padding:0 20px;font-size:clamp(17px,1.3vw,32px)}
+  .compact-header .compact-navigation{display:flex;grid-column:2;grid-row:1;position:static;width:auto;max-height:none;overflow:visible;padding:0;gap:clamp(20px,2.2vw,56px);background:none;box-shadow:none;font-size:clamp(16px,1.3vw,32px);white-space:nowrap}
+  .compact-navigation>div{position:relative}
+  .compact-navigation>div>a,.compact-navigation>div>button{border:0;padding:16px 0}
+  .compact-submenu{position:absolute;top:100%;left:0;min-width:250px;max-height:65vh;overflow-y:auto;padding:12px 20px;background:#17262e;box-shadow:0 12px 28px #0003;white-space:normal}
+}
+@media(max-width:680px){.site-header.compact-header{height:78px}.site-header.compact-header .nav-wrap{width:calc(100% - 28px);gap:10px}.site-header.compact-header .brand img{width:120px;max-height:55px}.compact-header .compact-quote{min-height:42px;padding:0 12px;gap:8px;font-size:13px}.compact-header .compact-navigation{max-height:calc(100dvh - 78px)}}
+
 /* Choose Your Van navigation panel */
 .nav-dropdown{position:static}
-.nav-dropdown-trigger{display:inline-flex;align-items:center;gap:8px;padding:0;border:0;background:none;color:#fff;font-size:inherit;font-weight:inherit;white-space:nowrap;cursor:pointer}
-.nav-dropdown-trigger span{font-size:20px;line-height:1}
+.nav-dropdown-control{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.nav-dropdown-label{display:inline-flex;align-items:center;white-space:nowrap;color:inherit;font-size:inherit;font-weight:inherit}
+.nav-dropdown-trigger{display:inline-flex;align-items:center;justify-content:center;padding:0;border:0;background:none;color:inherit;font-size:inherit;font-weight:inherit;white-space:nowrap;cursor:pointer}
+.nav-dropdown-trigger span{font-size:20px;line-height:1;display:block}
 .van-dropdown{display:none;position:absolute;z-index:10;top:calc(100% - 1px);left:50%;transform:translateX(-50%);width:min(1600px,calc(100vw - 64px));padding:30px 32px;background:#fff;color:#303030;border-radius:16px;box-shadow:0 12px 36px rgba(0,0,0,.16);grid-template-columns:.78fr 1.55fr;gap:64px;white-space:normal}
 .nav-dropdown.van-dropdown-open .van-dropdown{display:grid}
 .popular-vans-menu{padding:25px 28px;background:#eaf8fd;border-radius:14px;display:flex;flex-direction:column;gap:15px}
@@ -454,7 +693,9 @@ p,li,input,textarea,button{font-family:var(--font-body)}
 .services-dropdown>a:hover{background:#f6fbfd;color:#2588cd}
 @media(max-width:1100px){
   .nav-dropdown{width:100%;position:relative}
-  .nav-dropdown-trigger{width:100%;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:15px}
+  .nav-dropdown-control{width:100%;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.15)}
+  .nav-dropdown-label{padding:12px 0;font-size:15px}
+  .nav-dropdown-trigger{width:auto;padding:12px 0 12px 8px;border-bottom:0;font-size:15px}
   .van-dropdown{position:static;transform:none;width:100%;padding:14px 0 0;border-radius:0;box-shadow:none;grid-template-columns:1fr;gap:12px;background:transparent;color:#fff}
   .popular-vans-menu{padding:17px;background:#eaf8fd;color:#303030}
   .popular-vans-menu h2,.manufacturer-menu h2{font-size:17px;margin:0 0 6px}
@@ -471,3 +712,19 @@ p,li,input,textarea,button{font-family:var(--font-body)}
   .nav-dropdown:hover .services-dropdown{display:none}
   .nav-dropdown.service-dropdown-open .services-dropdown{display:block}
 }
+/* Slam Locks editorial sections and card grids. */
+.slam-cards-section{padding:150px 0;background:#fff;text-align:center}
+.slam-container{max-width:2070px;width:calc(100% - 48px);margin:auto}
+.slam-container>h2{font-size:54px;font-weight:700;line-height:1.3;margin:0 auto 32px;max-width:1100px}
+.slam-container p{font-size:26px;line-height:1.65;color:#626a70;margin:0}
+.slam-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:64px;margin:65px 32px 0}
+.slam-columns-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.slam-cards article{background:#e8f7fd;border-radius:30px;padding:50px 60px}
+.slam-cards h3{font-size:28px;font-weight:600;line-height:1.4;margin:0 0 45px;color:#101820}
+.slam-cards-wide{grid-template-columns:repeat(6,minmax(0,1fr))}
+.slam-cards-wide article{grid-column:span 2}.slam-cards-wide article:nth-last-child(-n+2){grid-column:span 3}
+.slamlocks-page .deadlocks-faq{padding-bottom:150px}.slamlocks-page .deadlocks-faq .deadlocks-grid{align-items:center}
+@media(max-width:2200px){.slam-cards-section{padding:100px 0}.slam-container>h2{font-size:40px;margin-bottom:25px}.slam-container p{font-size:18px}.slam-cards{gap:40px;margin:45px 24px 0}.slam-cards article{padding:35px 40px;border-radius:24px}.slam-cards h3{font-size:20px;margin-bottom:32px}}
+@media(max-width:1400px){.slam-cards-section{padding:75px 0}.slam-container>h2{font-size:32px}.slam-container p{font-size:16px}.slam-cards{gap:25px;margin:35px 0 0}.slam-cards article{padding:28px 25px}.slam-cards h3{font-size:17px;margin-bottom:25px}}
+@media(max-width:900px){.slam-cards,.slam-columns-4,.slam-cards-wide{grid-template-columns:repeat(2,minmax(0,1fr))}.slam-cards-wide article,.slam-cards-wide article:nth-last-child(-n+2){grid-column:auto}}
+@media(max-width:700px){.slam-cards-section{padding:50px 0}.slam-container{width:calc(100% - 36px)}.slam-container>h2{font-size:28px}.slam-cards,.slam-columns-4,.slam-cards-wide{grid-template-columns:1fr}.slamlocks-page .deadlocks-faq{padding-bottom:70px}}

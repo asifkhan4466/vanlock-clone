@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { SiteHeader } from "../components/SiteChrome";
-import { services } from "../site-data";
+import { SiteHeader, SiteFooter } from "../components/SiteChrome";
+
 
 const reviews = [
   { quote: "VanLock transformed the way we secure our vans. Their team was prompt, professional, and the system works flawlessly. Highly recommended.", name: "Daniel Morris", place: "West Yorkshire", image: "/vanlock/testimonial-daniel.jpg" },
@@ -97,24 +97,7 @@ return (
         </div>
       </section>
     </main>
-    <footer className="footer">
-      <div className="footer-main">
-        <div className="footer-brand">
-          <a className="footer-logo" href="/" aria-label="VanLock Security home"><img src="/vanlock/logo.png" alt="VanLock Security" /></a>
-          <p>We are specialists in advanced van security solutions. Our systems inspire confidence.</p>
-          <div className="footer-socials"><a href="/#contact" aria-label="Facebook">f</a><a href="/#contact" aria-label="Instagram">◎</a><a href="/#contact" aria-label="LinkedIn">in</a></div>
-        </div>
-        <div className="footer-column"><h3>Quick Links</h3><Link href="/">Home</Link><Link href="/about-us">About Us</Link><Link href="/fleets">Fleets</Link><Link href="/contact">Contact</Link></div>
-        <div className="footer-column footer-services"><h3>Our Services</h3>{services.map((service) => <Link href={`/our-services/${service.slug}`} key={service.slug}>{service.title}</Link>)}</div>
-        <div className="footer-column footer-contact">
-          <h3>Contact Details</h3>
-          <a href="tel:+447367674000"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z" /></svg><span>07367674000</span></a>
-          <a href="mailto:info@vanlocksecurity.co.uk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3zM3 6l9 7 9-7" /></svg><span>info@vanlocksecurity.co.uk</span></a>
-          <div className="footer-address"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg><span>Van lock security 594 green lane, Ilford</span></div>
-        </div>
-      </div>
-      <div className="footer-bottom">Copyright © 2026 VanLock Security | All Rights Reserved<a href="/#home" aria-label="Back to top">⌃</a></div>
-    </footer>
+    <SiteFooter />
     </>
   );
 }

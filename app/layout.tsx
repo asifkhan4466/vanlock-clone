@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  icons: {
+    icon: { url: "/vanlock/favicon.png", type: "image/png" },
+    apple: "/vanlock/favicon.png",
+  },
   title: "VanLock Security | Protect What Moves You",
   description: "Expert van locks, alarms and trackers fitted around you. Smart, reliable van security across London and beyond.",
 };

@@ -1,7 +1,28 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { SiteLayout } from "../components/SiteChrome";
-import { PageBanner } from "../components/ReferenceSections";
+import { EstimateBanner, PageBanner, Testimonials } from "../components/ReferenceSections";
 import { services } from "../site-data";
 
-const images = ["/vanlock/service-van.jpg", "/vanlock/hook-lock.jpg", "/vanlock/about-van.jpg", "/vanlock/fleet-van.jpg", "/vanlock/service-van.jpg", "/vanlock/hook-lock.jpg", "/vanlock/about-van.jpg"];
-export default function ServicesPage() { return <SiteLayout><main><PageBanner title="Our Services"/><section className="route-content"><div className="container"><div className="services-title"><p className="eyebrow">OUR SERVICES</p><h2>Our Van Lock Services</h2><p>Van Lock London offers smart, reliable security systems tailored specifically for commercial and personal vans.</p></div><div className="route-service-grid">{services.map((service, i) => <Link className="service-photo-card" href={`/our-services/${service.slug}`} key={service.slug} style={{ backgroundImage: `linear-gradient(0deg,rgba(0,0,0,.68),transparent 45%),url('${images[i]}')` }}><span>{service.title}</span></Link>)}</div></div></section></main></SiteLayout>; }
+const descriptions = [
+  "Dead locks are mechanical locks designed to work independently of your",
+  "The hook lock is a variant of the deadlock that uses a hook bolt to engage",
+  "Slam locks guarantee the door is locked every time it is closed.",
+  "Statement locks are mounted across your van doors, bracing them to provide security",
+  "A high-security replacement for your existing lock, our replacement locks",
+  "A high-security replacement for your existing lock, our replacement locks",
+  "Air Vent Installation is a smart upgrade for any van that transports tools, animals, chemicals, or anything sensitive to heat or poor airflow.",
+];
+
+export default function ServicesPage() {
+  return <SiteLayout><main className="services-index-page">
+    <PageBanner title="Our Services" image="/vanlock/blog-deadlock.webp"/>
+    <section className="services-catalog" aria-label="Van security services">
+      <div className="services-catalog-grid">{services.map((service, index) => <article className="services-catalog-card" key={service.slug}>
+        <img src={`/vanlock/service-product-${index}.png`} alt={service.title}/>
+        <h2>{service.title}</h2><p>{descriptions[index]}</p>
+        <Link href={`/our-services/${service.slug}`} aria-label={`Learn more about ${service.title}`}>Learn More <span aria-hidden="true">→</span></Link>
+      </article>)}</div>
+    </section>
+    <Testimonials/><EstimateBanner/>
+  </main></SiteLayout>;
+}

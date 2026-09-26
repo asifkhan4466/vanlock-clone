@@ -1,8 +1,10 @@
+import SlamLocksPage from "../../components/SlamLocksPage";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteLayout } from "../../components/SiteChrome";
 import { EstimateBanner, PageBanner, Testimonials } from "../../components/ReferenceSections";
 import { services } from "../../site-data";
+import DeadLocksPage from "../../components/DeadLocksPage";
 
 const serviceCopy: Record<string, { heading: string; intro: string; benefits: string[]; closing: string }> = {
   "van-dead-locks": { heading: "Secure Your Van with Heavy-Duty DeadLocks", intro: "A dead lock adds a separate, key-operated locking point to the van door. Its straight bolt engages with the van body, working independently from the factory central locking system. Vehicle-specific fitting kits help keep installation neat and protect the door structure.", benefits: ["Independent from the factory central locking system.", "Straight bolt secures into the van body.", "Operated using a separate high-security key.", "Keyed-alike options are available for fleets.", "Vehicle-specific kits suit different van models."], closing: "Protect Your Van — Upgrade Now!" },
@@ -19,6 +21,9 @@ export default async function ServiceDetailPage({ params }: PageProps<"/our-serv
   const { slug } = await params;
   const service = services.find(item => item.slug === slug);
   if (!service) notFound();
+  if (slug === "van-dead-locks") return <DeadLocksPage />;
+  if (slug === "van-hook-locks") return <DeadLocksPage variant="hooklocks" />;
+  if (slug === "van-slam-locks") return <SlamLocksPage />;
   const copy = serviceCopy[slug];
   return <SiteLayout><main><PageBanner title={service.title} image={slug === "air-vent-installation" ? "/vanlock/fleet-van.jpg" : "/vanlock/hook-lock.jpg"}/><section className="route-content"><div className="container service-detail"><div><p className="eyebrow">OUR SERVICES</p><h2>{copy?.heading ?? service.title}</h2>{copy && <p>{copy.intro}</p>}<h3>Key Features &amp; Benefits</h3>{copy ? <ul>{copy.benefits.map(item => <li key={item}>✓ <span>{item}</span></li>)}</ul> : null}<h3>{copy?.closing ?? service.title}</h3><Link className="button" href="/contact">Get a Quote <span>→</span></Link></div><img src={slug === "air-vent-installation" ? "/vanlock/fleet-van.jpg" : "/vanlock/hook-lock.jpg"} alt={service.title}/></div></section><Testimonials/><section className="route-related"><h2>Our Services</h2><div>{services.filter(item => item.slug !== slug).map(item => <Link href={`/our-services/${item.slug}`} key={item.slug}>{item.title} →</Link>)}</div></section><EstimateBanner/></main></SiteLayout>;
 }
