@@ -360,7 +360,7 @@ p,li,input,textarea,button{font-family:var(--font-body)}
   .site-header .nav-dropdown-trigger{font-size:inherit}
   .site-header .van-dropdown{top:100%;width:min(1400px,calc(100vw - 48px));max-height:calc(100vh - 140px);overflow:auto}
   .site-header .services-dropdown{display:none;top:100%;left:50%;transform:translateX(-7%);width:min(420px,calc(100vw - 48px));max-height:calc(100vh - 140px);overflow:auto}
-  .site-header .nav-dropdown:hover .services-dropdown,.site-header .nav-dropdown:focus-within .services-dropdown,.site-header .service-dropdown-open .services-dropdown{display:block}
+  .site-header .service-nav-dropdown.service-dropdown-open .services-dropdown{display:block}
   .site-header .services-dropdown>a{display:block;width:100%;white-space:normal}
 }
 @media(max-width:1100px){
@@ -371,12 +371,33 @@ p,li,input,textarea,button{font-family:var(--font-body)}
   .site-header .van-dropdown,.site-header .services-dropdown{max-height:55vh;overflow:auto}
 }
 
+/* Match the reference footer's wide four-column layout. */
+@media(min-width:1101px){
+  .footer-main{width:min(2070px,calc(100% - 32px));grid-template-columns:1.2fr .58fr 1.05fr .95fr;gap:clamp(28px,2.2vw,48px);min-height:560px;padding:72px 0 52px}
+  .footer-logo{width:min(350px,100%);margin-bottom:25px}
+  .footer-contact>a,.footer-address{display:grid;grid-template-columns:30px minmax(0,1fr);gap:14px;overflow-wrap:anywhere}
+  .footer-contact>a span,.footer-address span{min-width:0}
+}
+
+/* About page: testimonials, followed by the mission and team section. */
+.about-page .testimonial .container{width:min(1400px,calc(100% - 48px))}
+.about-team-section{background:#fff}
+.about-team-section .difference-layout{width:min(1360px,calc(100% - 48px));grid-template-columns:1fr .9fr;gap:48px}
+.about-team-section .difference-copy>.about-kicker{font-size:14px;line-height:1.4;letter-spacing:.16em;color:#288bd0;margin:0 0 14px}
+.about-team-section .difference-copy h2{font-size:clamp(32px,2.5vw,46px);line-height:1.22;margin:0 0 24px}
+.about-team-section .difference-copy article{margin:0 0 18px}
+.about-team-section .difference-copy h3{font-size:18px;line-height:1.4;margin-bottom:4px}
+.about-team-section .difference-copy p:not(.about-kicker){font-size:15px;line-height:1.65;margin:0}
+.about-team-section .difference-layout>img{height:auto;aspect-ratio:1.12;max-height:500px;object-fit:cover;border-radius:12px}
+@media(max-width:1100px){.about-team-section .difference-layout{width:calc(100% - 56px);grid-template-columns:1fr .9fr;gap:30px}.about-team-section .difference-layout>img{height:auto;max-height:440px}}
+@media(max-width:680px){.about-page .testimonial .container{width:calc(100% - 36px)}.about-team-section .difference-layout{width:calc(100% - 36px);grid-template-columns:1fr;gap:27px}.about-team-section .difference-copy h2{font-size:32px}.about-team-section .difference-copy h3{font-size:16px}.about-team-section .difference-copy p:not(.about-kicker){font-size:14px}.about-team-section .difference-layout>img{height:300px;max-height:none;aspect-ratio:auto}}
+
 /* Choose Your Van navigation panel */
 .nav-dropdown{position:static}
 .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:8px;padding:0;border:0;background:none;color:#fff;font-size:inherit;font-weight:inherit;white-space:nowrap;cursor:pointer}
 .nav-dropdown-trigger span{font-size:20px;line-height:1}
 .van-dropdown{display:none;position:absolute;z-index:10;top:calc(100% - 1px);left:50%;transform:translateX(-50%);width:min(1600px,calc(100vw - 64px));padding:30px 32px;background:#fff;color:#303030;border-radius:16px;box-shadow:0 12px 36px rgba(0,0,0,.16);grid-template-columns:.78fr 1.55fr;gap:64px;white-space:normal}
-.nav-dropdown:hover .van-dropdown,.nav-dropdown:focus-within .van-dropdown,.nav-dropdown.van-dropdown-open .van-dropdown{display:grid}
+.nav-dropdown.van-dropdown-open .van-dropdown{display:grid}
 .popular-vans-menu{padding:25px 28px;background:#eaf8fd;border-radius:14px;display:flex;flex-direction:column;gap:15px}
 .van-dropdown h2{margin:0 0 12px;color:#111;font-size:25px;line-height:1.3}
 .popular-vans-menu>a,.manufacturer-menu>div>a{display:flex;align-items:center;gap:12px;color:#303030;font-size:18px;line-height:1.5}
@@ -388,7 +409,46 @@ p,li,input,textarea,button{font-family:var(--font-body)}
 .manufacturer-menu>div>a{gap:12px}
 .all-manufacturers{display:inline-flex;align-items:center;gap:10px;margin:24px 0 0 auto;padding:14px 26px;background:#2588cd;border-radius:5px;color:#fff;font-size:17px;font-weight:700}
 .services-dropdown{display:none;position:absolute;z-index:11;top:calc(100% - 1px);left:50%;transform:translateX(-8%);width:420px;padding:0;background:#fff;color:#25292d;border-radius:14px;box-shadow:0 14px 32px rgba(0,0,0,.12);overflow:hidden}
-.nav-dropdown:hover .services-dropdown,.nav-dropdown:focus-within .services-dropdown,.service-dropdown-open .services-dropdown{display:block}
+.nav-dropdown.service-dropdown-open .services-dropdown{display:block}
+
+/* Route pages use the same VanLock palette and shared navigation. */
+.reference-banner{min-height:460px;background-position:center;background-size:cover;display:grid;place-items:center;color:#fff;text-align:center;padding:150px 24px 70px}
+.reference-banner h1{font-size:clamp(42px,5vw,72px);line-height:1.05;margin:0;font-weight:700}
+.route-content{background:#fff;padding:88px 0;color:#101114}
+.route-content.route-tint{background:#eaf7fc}
+.route-content .container{max-width:1320px}
+.route-content .services-title{max-width:740px;margin:0 auto 42px;text-align:center}
+.route-content .services-title .eyebrow{justify-content:center;color:#2787c4}
+.route-content .services-title h2,.fleet-intro h2,.fleet-benefits h2,.service-detail h2,.model-detail h2{font-size:clamp(32px,4vw,48px);line-height:1.15;margin:0 0 18px;color:#111}
+.route-content .services-title>p:not(.eyebrow){font-size:16px;line-height:1.7;color:#626a70}
+.route-service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.route-service-grid .service-photo-card{height:270px;border-radius:9px;background-position:center;background-size:cover}
+.manufacturer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 auto 48px;max-width:1120px}
+.manufacturer-grid a{display:flex;gap:13px;align-items:center;padding:18px 20px;background:#eaf7fc;border-radius:7px;font-size:17px}
+.manufacturer-grid a span{color:#298dcc;font-size:24px}
+.route-van-grid{max-width:1080px;margin:35px auto 0}
+.route-content .van-card{border-radius:8px;overflow:hidden;background:#f6f7f7}
+.route-content .van-photo{background-size:contain;background-repeat:no-repeat;background-color:#fff}
+.fleet-intro,.fleet-benefits,.service-detail,.model-detail{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.fleet-intro h3,.fleet-benefits h3,.service-detail h3{font-size:22px;margin:24px 0 12px;color:#111}
+.fleet-intro p:not(.eyebrow),.fleet-benefits p,.service-detail p,.service-detail li{font-size:16px;line-height:1.8;color:#626a70}
+.fleet-intro img,.service-detail>img,.model-detail>img{width:100%;max-height:490px;object-fit:cover;border-radius:9px}
+.fleet-benefits ul,.service-detail ul{list-style:none;padding:0;margin:25px 0;display:grid;gap:16px}
+.fleet-benefits li,.service-detail li{display:flex;gap:12px;color:#2787c4}
+.fleet-benefits li span,.service-detail li span{color:#32393e}
+.service-detail .button,.model-detail .button{background:#2588cd;color:#fff;margin-top:12px}
+.model-detail{max-width:1000px}
+.model-detail>img{object-fit:contain;background:#fff}
+.route-related{background:#eaf7fc;padding:55px 24px;text-align:center}
+.route-related h2{margin:0 0 23px;font-size:28px}
+.route-related>div{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.route-related a,.text-route-link{color:#2387c7}
+.route-related a{padding:10px 15px;background:#fff;border-radius:5px}
+.text-route-link{display:inline-block;margin-top:32px}
+.map-placeholder{min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:#eaf7fc;color:#2588cd}
+.map-placeholder h2{margin:0;color:#111}
+@media(max-width:900px){.route-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fleet-intro,.fleet-benefits,.service-detail,.model-detail{gap:32px}.manufacturer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:680px){.reference-banner{min-height:350px;padding-top:110px}.route-content{padding:55px 0}.route-content .container{width:calc(100% - 36px)}.route-service-grid{grid-template-columns:1fr}.route-service-grid .service-photo-card{height:260px}.manufacturer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.manufacturer-grid a{padding:14px 12px;font-size:14px}.route-van-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.route-content .van-card{min-height:0}.route-content .van-photo{height:145px}.route-content .van-info h3{font-size:16px}.route-content .van-info small{font-size:10px}.fleet-intro,.fleet-benefits,.service-detail,.model-detail{grid-template-columns:1fr;gap:25px}.service-detail>img{grid-row:1}.fleet-intro h2,.fleet-benefits h2,.service-detail h2,.model-detail h2{font-size:32px}.fleet-intro p:not(.eyebrow),.fleet-benefits p,.service-detail p,.service-detail li{font-size:14px}.map-placeholder{min-height:180px}}
 .services-dropdown>a{display:block;padding:19px 28px;border-bottom:1px solid #e1e1e1;color:#25292d;font-size:18px;line-height:1.4;transition:background .2s,color .2s}
 .services-dropdown>a:last-child{border-bottom:0}
 .services-dropdown>a:hover{background:#f6fbfd;color:#2588cd}

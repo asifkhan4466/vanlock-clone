@@ -1,23 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { SiteFooter, SiteHeader } from "./components/SiteChrome";
 
 const services = [
-  { title: "Van Dead Locks", image: "/vanlock/service-van.jpg", alt: "Van dead lock fitted to a van door" },
-  { title: "Van Hook Locks", image: "/vanlock/hook-lock.jpg", alt: "Hook lock on a van door" },
-  { title: "Van Slam Locks", image: "/vanlock/about-van.jpg", alt: "Slam lock fitted to a van" },
-  { title: "Van Statement Lock", image: "/vanlock/fleet-van.jpg", alt: "Statement lock on a van door" },
+  { title: "Van Dead Locks", image: "/vanlock/service-van.jpg", alt: "Van dead lock fitted to a van door", href: "/our-services/van-dead-locks" },
+  { title: "Van Hook Locks", image: "/vanlock/hook-lock.jpg", alt: "Hook lock on a van door", href: "/our-services/van-hook-locks" },
+  { title: "Van Slam Locks", image: "/vanlock/about-van.jpg", alt: "Slam lock fitted to a van", href: "/our-services/van-slam-locks" },
+  { title: "Van Statement Lock", image: "/vanlock/fleet-van.jpg", alt: "Statement lock on a van door", href: "/our-services/van-statement-lock" },
 ];
 
 const vans = [
-  ["Vauxhall", "Vivaro 2019", "/vanlock/vauxhall-vivaro.png"],
-  ["Volkswagen", "Transporter T6.1 2020", "/vanlock/vw-transporter.jpeg"],
-  ["Ford", "Transit 2014", "/vanlock/ford-transit.png"],
-  ["Ford", "Custom 2012–2023", "/vanlock/ford-custom-2012.png"],
-  ["Renault", "Trafic 2014", "/vanlock/renault-trafic.jpeg"],
-  ["Ford", "Custom 2023 onwards", "/vanlock/ford-custom-2023.png"],
-  ["Talento", "2014 onwards", "/vanlock/fiat-talento-2014.png"],
-  ["Relay", "2006 onwards", "/vanlock/citroen-relay.png"],
+  ["Vauxhall", "Vivaro 2019", "/vanlock/vauxhall-vivaro.png", "/vauxhall/vivaro-2019"],
+  ["Volkswagen", "Transporter T6.1 2020", "/vanlock/vw-transporter.jpeg", "/volkswagen/transporter-t6-1-2020"],
+  ["Ford", "Transit 2014", "/vanlock/ford-transit.png", "/ford/transit-2014"],
+  ["Ford", "Custom 2012–2023", "/vanlock/ford-custom-2012.png", "/ford/custom-2012-2023"],
+  ["Renault", "Trafic 2014", "/vanlock/renault-trafic.jpeg", "/renault/trafic-2014"],
+  ["Ford", "Custom 2023 onwards", "/vanlock/ford-custom-2023.png", "/ford/custom-2023"],
+  ["Fiat", "Talento 2014 onwards", "/vanlock/fiat-talento-2014.png", "/fiat/talento-2014"],
+  ["Citroen", "Relay 2006 onwards", "/vanlock/citroen-relay.png", "/citroen/relay-2006"],
 ];
 
 const reasons = [
@@ -59,49 +60,33 @@ const steps = [
   ["04.", "Ongoing Support", "We have a presence even after installation. Do you require repairs, enhancements, or guidance? VanLock is available to provide lifelong support and maintain peace of mind."],
 ];
 
-function Button({ children, href = "#contact", light = false }: { children: React.ReactNode; href?: string; light?: boolean }) {
-  return <a className={`button ${light ? "button-light" : ""}`} href={href}>{children}<span aria-hidden="true">→</span></a>;
+function Button({ children, href = "/contact", light = false }: { children: React.ReactNode; href?: string; light?: boolean }) {
+  return <Link className={`button ${light ? "button-light" : ""}`} href={href}>{children}<span aria-hidden="true">→</span></Link>;
 }
 
 function Eyebrow({ children }: { children: React.ReactNode }) { return <p className="eyebrow"><span />{children}</p>; }
 
 function Header() {
-  const [open, setOpen] = useState(false);
-  const [vansOpen, setVansOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const links = [["Home", "/#home"], ["About Us", "/about-us"], ["Our Services", "/#services"], ["Fleets", "/#vans"], ["Contact", "/#contact"]];
-  const popularVans = ["Ford Custom 2023", "Ford Custom 2012-2023", "Ford Transit 2014", "Renault Trafic 2014", "Vauxhall Vivaro 2019", "Volkswagen Transporter T6.1 2020"];
-  const manufacturers = ["Citroen", "Fiat", "Ford", "Isuzu", "IVECO", "Land Rover", "LEVC", "MAN", "Maxus", "Mercedes-Benz", "Nissan", "Peugeot", "Renault", "Toyota", "Vauxhall", "Volkswagen"];
-  const serviceLinks = ["Van Dead Locks", "Van Hook Locks", "Van Slam Locks", "Van Statement Lock", "Replacement Lock for Ford", "Repair Plate or External Shield", "Air Vent Installation"];
-  return <header className="site-header"><div className="container nav-wrap">
-    <a className="brand" href="/#home" aria-label="VanLock Security home"><img src="/vanlock/logo.png" alt="VanLock Security" /></a>
-    <button className="menu-toggle" aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen(!open)}>{open ? "✕" : "☰"}</button>
-    <nav className={open ? "nav-links nav-open" : "nav-links"}>{links.slice(0, 2).map(([label, href]) => <a key={label} onClick={() => setOpen(false)} href={href}>{label}</a>)}<div className={`nav-dropdown${vansOpen ? " van-dropdown-open" : ""}`}><button className="nav-dropdown-trigger" type="button" aria-expanded={vansOpen} onClick={() => setVansOpen(!vansOpen)}>Choose Your Van <span aria-hidden="true">⌄</span></button><div className="van-dropdown"><div className="popular-vans-menu"><h2>Popular Vans</h2>{popularVans.map(van => <a key={van} href="/#vans" onClick={() => { setOpen(false); setVansOpen(false); }}>{van} <span>›</span></a>)}</div><div className="manufacturer-menu"><h2>Choose by Manufacturer</h2><div>{manufacturers.map(make => <a key={make} href="/#vans" onClick={() => { setOpen(false); setVansOpen(false); }}><span>›</span>{make}</a>)}</div><a className="all-manufacturers" href="/#vans" onClick={() => { setOpen(false); setVansOpen(false); }}>All Manufacturers <span>›</span></a></div></div></div><div className={`nav-dropdown service-nav-dropdown${servicesOpen ? " service-dropdown-open" : ""}`}><button className="nav-dropdown-trigger" type="button" aria-expanded={servicesOpen} onClick={() => setServicesOpen(!servicesOpen)}>Our Services <span aria-hidden="true">⌄</span></button><div className="services-dropdown">{serviceLinks.map(service => <a key={service} href="/#services" onClick={() => { setOpen(false); setServicesOpen(false); }}>{service}</a>)}</div></div>{links.slice(3).map(([label, href]) => <a key={label} onClick={() => setOpen(false)} href={href}>{label}</a>)}<Button href="/#contact">Get a Quote</Button></nav>
-  </div></header>;
+  return <SiteHeader />;
 }
 
 function Footer() {
-  return <footer className="footer"><div className="footer-main">
-    <div className="footer-brand"><a className="footer-logo" href="#home"><img src="/vanlock/logo.png" alt="VanLock Security" /></a><p>We are specialists in advanced van security solutions. Our systems inspire confidence.</p><div className="footer-socials"><a href="#contact" aria-label="Facebook">f</a><a href="#contact" aria-label="Instagram">◎</a><a href="#contact" aria-label="LinkedIn">in</a></div></div>
-    <div className="footer-column"><h3>Quick Links</h3><a href="#home">Home</a><a href="#about">About Us</a><a href="#vans">Fleets</a><a href="#contact">Contact</a></div>
-    <div className="footer-column footer-services"><h3>Our Services</h3>{["Van Dead Locks", "Van Hook Locks", "Van Slam Locks", "Van Statement Lock", "Replacement Lock For Ford", "Repair Plate Or External Shield", "Air Vent Installation"].map(item => <a href="#services" key={item}>{item}</a>)}</div>
-    <div className="footer-column footer-contact"><h3>Contact Details</h3><a href="tel:+447367674000"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg><span>07367674000</span></a><a href="mailto:info@vanlocksecurity.co.uk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg><span>info@vanlocksecurity.co.uk</span></a><div className="footer-address"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Van lock security 594 green lane, Ilford</span></div></div>
-  </div><div className="footer-bottom">Copyright © 2026 VanLock Security | All Rights Reserved<a href="#home" aria-label="Back to top">⌃</a></div></footer>;
+  return <SiteFooter />;
 }
 
 export default function Home() {
   return <><Header /><main id="home">
-    <section className="hero"><div className="hero-image"/><div className="hero-blue-shape"/><img className="hero-van" src="/vanlock/van-hero.png" alt="White security van"/><div className="container hero-content"><div className="hero-copy"><h1>Safe. Smart. With Van Lock<br/>Security<span>,</span></h1><p>We specialize in advanced <a href="#services">Van Lock Security</a> solutions designed to safeguard your vehicle, tools, and livelihood. With expertly installed locks and anti-theft systems, we keep your van secure—day and night.</p><div className="hero-actions"><Button>Get a Quote</Button><a className="button hero-service-button" href="#services">Our Services</a></div></div></div></section>
+    <section className="hero"><div className="hero-image"/><div className="hero-blue-shape"/><img className="hero-van" src="/vanlock/van-hero.png" alt="White security van"/><div className="container hero-content"><div className="hero-copy"><h1>Safe. Smart. With Van Lock<br/>Security<span>,</span></h1><p>We specialize in advanced <Link href="/our-services">Van Lock Security</Link> solutions designed to safeguard your vehicle, tools, and livelihood. With expertly installed locks and anti-theft systems, we keep your van secure—day and night.</p><div className="hero-actions"><Button>Get a Quote</Button><Link className="button hero-service-button" href="/our-services">Our Services</Link></div></div></div></section>
 
-    <section className="services section" id="services"><div className="container"><div className="services-title"><Eyebrow>OUR SERVICES</Eyebrow><h2>Our Van Lock Services</h2><p>Van Lock London offers smart, reliable security systems tailored specifically for<br className="desktop-break"/> commercial and personal vans.</p></div><div className="service-photo-grid">{services.map(service => <a className="service-photo-card" href="#contact" key={service.title} style={{ backgroundImage: `linear-gradient(0deg,rgba(0,0,0,.68),transparent 38%),url('${service.image}')` }} aria-label={service.alt}><span>{service.title}</span></a>)}</div><a className="services-all-button" href="#contact">View All Services <span>→</span></a></div></section>
+    <section className="services section" id="services"><div className="container"><div className="services-title"><Eyebrow>OUR SERVICES</Eyebrow><h2>Our Van Lock Services</h2><p>Van Lock London offers smart, reliable security systems tailored specifically for<br className="desktop-break"/> commercial and personal vans.</p></div><div className="service-photo-grid">{services.map(service => <Link className="service-photo-card" href={service.href} key={service.title} style={{ backgroundImage: `linear-gradient(0deg,rgba(0,0,0,.68),transparent 38%),url('${service.image}')` }} aria-label={service.alt}><span>{service.title}</span></Link>)}</div><Link className="services-all-button" href="/our-services">View All Services <span>→</span></Link></div></section>
 
-    <section className="about section" id="about"><div className="about-preview-wrap"><div className="about-preview-image"><img src="https://vanlocksecurity.co.uk/wp-content/uploads/2025/05/assets_task_01jvend17eed8atb4jsj1ndqr4_1747470235_img_0.webp" alt="VanLock security specialist beside a van"/></div><div className="about-preview-copy"><Eyebrow>ABOUT US</Eyebrow><h2>Our Approach to Smart<br className="about-title-break"/> Security</h2><p>A permanent solution to protection requires a combination of strategies, which include, among others, innovative locking systems, powerful hardware, <a href="#services">intelligent monitoring</a>, and frequent maintenance. Van Lock Security in London uses the latest technology to protect every vehicle with assurance, and we learn from real-world threats.</p><a className="about-preview-button" href="#contact">Read More <span>→</span></a></div></div></section>
+    <section className="about section" id="about"><div className="about-preview-wrap"><div className="about-preview-image"><img src="/vanlock/about-van.jpg" alt="VanLock security specialist beside a van"/></div><div className="about-preview-copy"><Eyebrow>ABOUT US</Eyebrow><h2>Our Approach to Smart<br className="about-title-break"/> Security</h2><p>A permanent solution to protection requires a combination of strategies, which include, among others, innovative locking systems, powerful hardware, <Link href="/our-services">intelligent monitoring</Link>, and frequent maintenance. Van Lock Security in London uses the latest technology to protect every vehicle with assurance, and we learn from real-world threats.</p><Link className="about-preview-button" href="/about-us">Read More <span>→</span></Link></div></div></section>
 
     <section className="mission-vision section"><div className="mission-vision-container"><h2>Secure, Track &amp; Protect<br/>Bring It All Together</h2><div className="mission-vision-grid"><article><h3>Our Mission</h3><p>VanLock is a company that exclusively works on van security. We make solutions that are exact, reliable, and new. Our solutions work with various vans, so you may protect either one van or your whole fleet. We make sure your vehicle is safe 24/7 using the latest technology and parts that are made for professionals.</p></article><article><h3>Our Vision</h3><p>We know plenty about the demands of mobile businesses, which sets us apart. We work directly with van owners to come up with smart, simple methods that fit right in with their everyday duties. Security Van Lock is the company you can trust for mobile security, from installation to continuous support.</p></article></div></div></section>
 
     <section className="estimate-banner"><div className="estimate-banner-inner"><div className="estimate-banner-copy"><p>ESTIMATE FOR YOUR PROJECT</p><h2>Ready to get an Estimate<br/>for your Project?</h2></div><Button>Get a Quote</Button></div></section>
 
-    <section className="van-section section" id="vans"><div className="container"><div className="van-heading"><div><Eyebrow>CHOOSE YOUR VAN</Eyebrow><h2>Security Solutions for Popular<br className="van-title-break"/> Vans</h2></div><a className="van-all-button" href="#contact">View All Vans <span>→</span></a></div><div className="van-grid">{vans.map(([brand, name, image]) => <a className="van-card" href="#contact" key={`${brand}-${name}`}><div className="van-photo" style={{ backgroundImage: `url(${image})` }}/><div className="van-info"><h3>{brand}</h3><small>{name}</small></div></a>)}</div></div></section>
+    <section className="van-section section" id="vans"><div className="container"><div className="van-heading"><div><Eyebrow>CHOOSE YOUR VAN</Eyebrow><h2>Security Solutions for Popular<br className="van-title-break"/> Vans</h2></div><Link className="van-all-button" href="/choose-your-van">View All Vans <span>→</span></Link></div><div className="van-grid">{vans.map(([brand, name, image, href]) => <Link className="van-card" href={href} key={`${brand}-${name}`}><div className="van-photo" style={{ backgroundImage: `url(${image})` }}/><div className="van-info"><h3>{brand}</h3><small>{name}</small></div></Link>)}</div></div></section>
 
     <section className="why section"><div className="why-container"><div className="why-heading"><Eyebrow>WHY CHOOSE US?</Eyebrow><h2>Secure, Track &amp; Protect<br/>Bring It All Together</h2></div><div className="reason-grid">{reasons.map(([icon, title, text]) => <article className="reason-card" key={title}><ReasonIcon name={icon}/><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
 
